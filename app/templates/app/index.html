@@ -1,0 +1,35 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+  <script type='text/javascript' src="{% static 'jquery/jquery-3.2.1.min.js' %}"></script>
+  <script type='text/javascript' src="{% static 'jquery-validation/jquery.validate.min.js' %}"></script>
+  <script async type='text/javascript' src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  <script>
+    var url = "{% url 'ajax_submit' %}";
+  </script>
+  <script defer type='text/javascript' src="{% static 'app/js/contactform.js' %}"></script>
+</head>
+
+<body>
+  <nav class='navbar navbar-inverse'>
+    <div class='container-fluid'>
+      <div class='navbar-header'>
+        <a class='navbar-brand'>Contact Form</a>
+      </div>
+    </div>
+  </nav>
+  <div class='container'>
+    <div class='alert-area'>
+    </div>
+    <div class='contact-form'>
+      {% crispy form %}
+    </div>
+  </div>
+</body>
+</html>
