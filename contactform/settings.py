@@ -140,4 +140,4 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 
 
 EMAIL_FROM = os.environ.get('EMAIL_FROM', '')
-EMAIL_TO = os.environ.get('EMAIL_TO', '')
+EMAIL_TO = os.environ.get('EMAIL_TO', 'example@extraordinarymedia.com')
