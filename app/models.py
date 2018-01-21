@@ -21,13 +21,12 @@ class ContactUser(models.Model):
         (TOWNHOUSE, 'Townhouse')
     )
 
-    email_address = models.EmailField()
-
     phone_regex = RegexValidator(
         regex=r'^[0-9\-\(\) \+]+$',
         message="Only numbers, (, ), -, +, and spaces are allowed."
     )
 
+    email_address = models.EmailField()
     phone_number = models.CharField(max_length=20, validators=[phone_regex, integers_validator])
     my_property_type = models.CharField(max_length=1, choices=PROPERTY_TYPE_CHOICES)
     notes = models.TextField(
