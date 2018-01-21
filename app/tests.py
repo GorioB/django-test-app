@@ -104,6 +104,10 @@ class ApiPostTestCase(TestCase):
         )
 
         self.assertTrue(json.loads(response.content)['success'])
+        self.assertEqual(
+            len(ContactUser.objects.filter(**self.test_data)),
+            1
+        )  # one database entry with test details has been created
         self.assertEqual(len(mail.outbox), 1)  # email has been sent
 
     def test_csrf(self):
